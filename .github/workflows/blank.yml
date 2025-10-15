@@ -25,6 +25,6 @@ jobs:
       - name: Merge dev into main
         if: success()
         run: |
-          git checkout main
+          git checkout remote/origin/main
           git merge dev
           git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git main
